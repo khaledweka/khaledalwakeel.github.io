@@ -54,13 +54,42 @@ Place your profile image at `assets/profile.png`. Recommended size: 400x400px or
 - First visit uses `prefers-color-scheme` if no stored preference.
 - CSS variables in `css/styles.css` under `[data-theme="dark"]` and `[data-theme="light"]`.
 
-## Deployment
+## Deployment to khaledalwakeel.github.io
 
-1. Push to the `main` branch.
-2. In GitHub repo **Settings** → **Pages**:
-   - Source: Deploy from a branch
-   - Branch: `main` / `(root)`
-3. Site URL: `https://khaledalwakeel.github.io` (or custom domain via CNAME).
+For the site to be live at **https://khaledalwakeel.github.io**, the repository must be under the GitHub account `khaledalwakeel` and named `khaledalwakeel.github.io`.
+
+### Option A: Repo already under khaledalwakeel
+
+1. Push to `main`:
+   ```bash
+   git push origin main
+   ```
+2. On GitHub: **Settings** → **Pages**
+3. Under "Build and deployment":
+   - **Source**: Deploy from a branch
+   - **Branch**: `main` / `/(root)`
+4. Save. The site will be live at https://khaledalwakeel.github.io within a few minutes.
+
+### Option B: Repo is under a different account (e.g. khaledweka)
+
+To use the domain **khaledalwakeel.github.io**:
+
+1. Create a GitHub account named `khaledalwakeel` (if needed).
+2. Create a new repo: **github.com/khaledalwakeel/khaledalwakeel.github.io**
+3. Add it as a remote and push:
+   ```bash
+   git remote add khaledalwakeel https://github.com/khaledalwakeel/khaledalwakeel.github.io.git
+   git push khaledalwakeel main
+   ```
+4. In that repo: **Settings** → **Pages** → Source: `main` / `/(root)`
+
+### Option C: Keep current repo (khaledweka)
+
+If you keep the repo at `khaledweka/khaledalwakeel.github.io`, the site will be at:
+
+**https://khaledweka.github.io/khaledalwakeel.github.io/**
+
+Enable Pages in **Settings** → **Pages** → Source: `main` / `/(root)`.
 
 ## Custom Domain
 
