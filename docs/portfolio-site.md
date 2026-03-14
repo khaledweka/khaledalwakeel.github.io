@@ -93,10 +93,4 @@ Enable Pages in **Settings** → **Pages** → Source: `main` / `/(root)`.
 
 ## Custom Domain
 
-Create a `CNAME` file in the repo root with your domain, e.g.:
-
-```
-khaled-elwakeel.com
-```
-
-Then configure DNS for your domain to point to GitHub Pages.
+Create a `CNAME` file in the repo root with your custom domain, then configure DNS to point to GitHub Pages.
