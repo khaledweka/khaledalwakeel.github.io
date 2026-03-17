@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Production-Grade Reference Architecture for Fintech + Logistics: Laravel, Vue, Flutter. Microservices, DDD, event-driven coordination, and deployable blueprints.">
+  <title>Fintech + Logistics Architecture: A Production-Grade Blueprint | Khaled Alwakeel</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .arch-svg .service-box { fill: var(--color-bg-muted); stroke: var(--color-accent); }
+    .arch-svg .gateway-box { fill: var(--color-success-dim); stroke: var(--color-success); }
+    .arch-svg text { fill: var(--color-text); }
+    .arch-svg .service-label { font-size: 9px; fill: var(--color-text-muted); }
+  </style>
+</head>
+<body>
+  <div class="site-wrapper">
+    <header class="site-header">
+      <div class="container">
+        <div class="header-inner">
+          <div class="site-logo">
+            <a href="../index.html">Khaled Alwakeel</a>
+          </div>
+          <nav>
+            <ul class="nav-links">
+              <li><a href="../index.html#about">About</a></li>
+              <li><a href="../index.html#experience">Experience</a></li>
+              <li><a href="../index.html#skills">Skills</a></li>
+              <li><a href="../index.html#certifications">Certifications</a></li>
+              <li><a href="index.html">Blog</a></li>
+              <li>
+                <button type="button" class="theme-toggle" aria-label="Toggle dark/light mode">
+                  <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+                  </svg>
+                  <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                  </svg>
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <article class="container" style="padding-top: 3rem;">
+        <header class="post-header">
+          <h1 class="post-title">Fintech + Logistics Architecture: A Production-Grade Blueprint</h1>
+          <p class="post-meta">March 17, 2026</p>
+          <div class="post-share">
+            <span class="post-share-label">Share</span>
+            <a href="#" class="post-share-btn post-share-twitter" aria-label="Share on X (Twitter)" title="Share on X">𝕏</a>
+            <a href="#" class="post-share-btn post-share-linkedin" aria-label="Share on LinkedIn" title="Share on LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <button type="button" class="post-share-btn post-share-copy" aria-label="Copy link" title="Copy link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+        </header>
+
+        <div class="post-content">
+          <p>
+            This is a production-grade reference architecture tailored for a <strong>Laravel + Vue + Flutter</strong> stack in a <strong>fintech + logistics hybrid</strong> domain. Not generic DDD theory—a deployable blueprint with boundaries, module structure, communication patterns, and operational concerns.
+          </p>
+
+          <h2>1. System Topology (Macro Architecture)</h2>
+          <p>
+            You are building a modular microservices system with event-driven coordination:
+          </p>
+
+          <figure class="post-figure post-infographic">
+            <div class="infographic-arch" role="img" aria-label="System topology: Vue and Flutter clients, API Gateway, microservices, event bus, infrastructure">
+              <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" class="arch-svg">
+                <defs>
+                  <marker id="arrow-arch" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="currentColor"/></marker>
+                </defs>
+                <rect x="180" y="10" width="100" height="35" rx="6" class="service-box"/>
+                <text x="230" y="28" text-anchor="middle" font-size="11">Vue.js Web</text>
+                <rect x="320" y="10" width="100" height="35" rx="6" class="service-box"/>
+                <text x="370" y="28" text-anchor="middle" font-size="11">Flutter Mobile</text>
+                <path d="M230 45 L230 57 L300 57 L300 75" stroke="currentColor" stroke-width="1.5" fill="none" marker-end="url(#arrow-arch)"/>
+                <path d="M370 45 L370 57 L300 57" stroke="currentColor" stroke-width="1.5" fill="none" marker-end="url(#arrow-arch)"/>
+                <rect x="240" y="75" width="120" height="40" rx="6" class="gateway-box"/>
+                <text x="300" y="95" text-anchor="middle" font-size="11" font-weight="600">API Gateway (BFF)</text>
+                <text x="300" y="108" text-anchor="middle" class="service-label">Rate limit, Auth, Routing</text>
+                <path d="M300 115 L300 140" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow-arch)"/>
+                <rect x="20" y="150" width="560" height="120" rx="8" class="service-box" stroke-dasharray="4 2"/>
+                <text x="300" y="168" text-anchor="middle" font-size="10" font-weight="600">Microservices</text>
+                <g transform="translate(40, 180)">
+                  <rect width="70" height="28" rx="4" class="service-box"/><text x="35" y="18" text-anchor="middle" font-size="8">Identity</text>
+                </g>
+                <g transform="translate(120, 180)">
+                  <rect width="70" height="28" rx="4" class="service-box"/><text x="35" y="18" text-anchor="middle" font-size="8">User/Profile</text>
+                </g>
+                <g transform="translate(200, 180)">
+                  <rect width="70" height="28" rx="4" class="service-box"/><text x="35" y="18" text-anchor="middle" font-size="8">Wallet/Ledger</text>
+                </g>
+                <g transform="translate(280, 180)">
+                  <rect width="70" height="28" rx="4" class="service-box"/><text x="35" y="18" text-anchor="middle" font-size="8">Payment</text>
+                </g>
+                <g transform="translate(360, 180)">
+                  <rect width="70" height="28" rx="4" class="service-box"/><text x="35" y="18" text-anchor="middle" font-size="8">Shipment</text>
+                </g>
+                <g transform="translate(440, 180)">
+                  <rect width="70" height="28" rx="4" class="service-box"/><text x="35" y="18" text-anchor="middle" font-size="8">Routing</text>
+                </g>
+                <g transform="translate(520, 180)">
+                  <rect width="70" height="28" rx="4" class="service-box"/><text x="35" y="18" text-anchor="middle" font-size="8">Notification</text>
+                </g>
+                <path d="M300 270 L300 290" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow-arch)"/>
+                <rect x="220" y="295" width="160" height="22" rx="4" class="service-box"/>
+                <text x="300" y="310" text-anchor="middle" font-size="10">Event Bus (Kafka / RabbitMQ)</text>
+                <path d="M300 317 L300 320" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-arch)"/>
+                <text x="300" y="335" text-anchor="middle" class="service-label">DBs, Cache, Storage</text>
+              </svg>
+            </div>
+            <figcaption>System Topology: Clients → Gateway → Microservices → Event Bus → Infrastructure</figcaption>
+          </figure>
+
+          <h2>2. Bounded Contexts → Service Decomposition</h2>
+
+          <h3>Fintech Contexts</h3>
+          <ul>
+            <li><strong>Wallet / Ledger (Core Domain):</strong> Double-entry bookkeeping, transactions, balances, invariants.</li>
+            <li><strong>Payments:</strong> External gateways, payment lifecycle (pending, success, failed).</li>
+          </ul>
+
+          <h3>Logistics Contexts</h3>
+          <ul>
+            <li><strong>Shipment:</strong> Shipment lifecycle (core aggregate).</li>
+            <li><strong>Routing:</strong> Optimization logic (core domain candidate).</li>
+            <li><strong>Tracking:</strong> Event ingestion (GPS, updates).</li>
+          </ul>
+
+          <h3>Supporting Contexts</h3>
+          <p>Identity/Auth, Notifications, Reporting.</p>
+
+          <p><strong>Critical Rule:</strong> Each bounded context = independent Laravel service.</p>
+
+          <h2>3. Internal Service Architecture (Laravel)</h2>
+          <p>Each service follows strict DDD layered modular structure:</p>
+
+          <pre><code>app/
+├── Domain/
+│    ├── Shipment/
+│    │    ├── Entities/
+│    │    ├── ValueObjects/
+│    │    ├── Aggregates/
+│    │    ├── Services/
+│    │    ├── Events/
+│    │    └── Repositories/
+├── Application/
+│    ├── Commands/
+│    ├── Handlers/
+│    ├── DTOs/
+│    └── UseCases/
+├── Infrastructure/
+│    ├── Persistence/
+│    ├── Messaging/
+│    ├── External/
+│    └── Cache/
+└── Interfaces/
+     ├── Http/
+     │    ├── Controllers/
+     │    └── Requests/
+     └── Console/</code></pre>
+
+          <h3>Key Enforcement Rules</h3>
+          <ul>
+            <li>❌ No Eloquent models in Domain</li>
+            <li>❌ No business logic in Controllers</li>
+            <li>❌ No cross-context imports</li>
+            <li>✅ Domain is pure PHP</li>
+            <li>✅ Infrastructure implements interfaces</li>
+            <li>✅ Application orchestrates use cases</li>
+          </ul>
+
+          <h2>4. Example: Shipment Aggregate</h2>
+
+          <h3>Domain Layer</h3>
+          <pre><code>final class Shipment
+{
+    private ShipmentId $id;
+    private Address $destination;
+    private ShipmentStatus $status;
+
+    public function dispatch(): void
+    {
+        if ($this->status !== ShipmentStatus::CREATED) {
+            throw new DomainException("Invalid state transition");
+        }
+        $this->status = ShipmentStatus::IN_TRANSIT;
+    }
+}</code></pre>
+
+          <h3>Value Object</h3>
+          <pre><code>final class Address
+{
+    public function __construct(
+        public readonly string $city,
+        public readonly string $street,
+        public readonly string $country
+    ) {}
+}</code></pre>
+
+          <h3>Domain Event</h3>
+          <pre><code>final class ShipmentDispatched
+{
+    public function __construct(public ShipmentId $id) {}
+}</code></pre>
+
+          <h2>5. Repository Pattern (Laravel Implementation)</h2>
+
+          <h3>Domain Interface</h3>
+          <pre><code>interface ShipmentRepository
+{
+    public function save(Shipment $shipment): void;
+    public function find(ShipmentId $id): ?Shipment;
+}</code></pre>
+
+          <h3>Infrastructure Implementation</h3>
+          <pre><code>final class EloquentShipmentRepository implements ShipmentRepository
+{
+    public function save(Shipment $shipment): void
+    {
+        // map aggregate → Eloquent model
+    }
+}</code></pre>
+
+          <h2>6. Event-Driven Communication (Critical)</h2>
+          <p>Use Event Bus (Kafka / RabbitMQ). Domain Event → Integration Event:</p>
+
+          <p><strong>Inside service:</strong> <code>ShipmentDispatched</code> (Domain Event)</p>
+          <p><strong>Published as:</strong></p>
+          <pre><code>{
+  "event": "shipment.dispatched",
+  "shipment_id": "123"
+}</code></pre>
+
+          <p><strong>Consumers:</strong> Routing Service (recalculates route), Notification Service (sends update), Analytics (logs KPI).</p>
+
+          <blockquote>
+            <p><strong>Rule:</strong> Never call another service synchronously for core flows.</p>
+          </blockquote>
+
+          <h2>7. Consistency Model</h2>
+          <ul>
+            <li><strong>Inside Aggregate:</strong> Strong consistency (single transaction).</li>
+            <li><strong>Across Services:</strong> Eventual consistency.</li>
+          </ul>
+          <p>Example: Wallet debited → Event emitted → Shipment created. <strong>No distributed transactions.</strong></p>
+
+          <h2>8. Saga Pattern (Process Coordination)</h2>
+          <p>For fintech + logistics, you must implement Sagas. Example: Order → Payment → Shipment</p>
+          <ol>
+            <li>Order Created</li>
+            <li>→ Payment Service (charge)</li>
+            <li>→ If success → Shipment Service</li>
+            <li>→ If failure → compensate (refund / cancel)</li>
+          </ol>
+          <p><strong>Implementation Options:</strong> Choreography (event-based) or Orchestrator (dedicated service).</p>
+
+          <h2>9. API Layer (Gateway / BFF)</h2>
+          <p><strong>Option A: API Gateway</strong> — Rate limiting, Auth, Routing.</p>
+          <p><strong>Option B: BFF (Backend for Frontend)</strong> — Separate for Web (Vue) and Mobile (Flutter). Different payload shapes, performance optimization, aggregation across services.</p>
+
+          <h2>10. Frontend Architecture</h2>
+          <ul>
+            <li><strong>Vue.js (Web):</strong> Modular by domain, API via BFF, state management (Pinia).</li>
+            <li><strong>Flutter (Mobile):</strong> Clean architecture (presentation / domain / data), offline-first (critical for logistics tracking).</li>
+          </ul>
+
+          <h2>11. Infrastructure Stack</h2>
+          <ul>
+            <li><strong>Core:</strong> Nginx, Laravel Octane (Swoole/RoadRunner), MySQL/PostgreSQL (per service), Redis (cache + queues), Kafka/RabbitMQ.</li>
+            <li><strong>DevOps:</strong> Dockerized services, Kubernetes (optional), CI/CD (GitHub Actions / GitLab CI), automated tests, static analysis.</li>
+          </ul>
+
+          <h2>12. Security & Fintech Requirements</h2>
+          <p><strong>MUST-HAVE:</strong></p>
+          <ul>
+            <li>Idempotency keys (payments)</li>
+            <li>Audit logs (immutable)</li>
+            <li>Encryption at rest and in transit (TLS)</li>
+            <li>Role-based access control</li>
+          </ul>
+          <blockquote>
+            <p><strong>Ledger Rule (Very Important):</strong> Never update balances directly—always derive from transactions.</p>
+          </blockquote>
+
+          <h2>13. Observability</h2>
+          <p><strong>Required Stack:</strong> Logging (ELK), Metrics (Prometheus + Grafana), Tracing (OpenTelemetry).</p>
+          <p>Debugging distributed systems without tracing is impossible.</p>
+
+          <h2>14. Anti-Corruption Layer (Legacy Integration)</h2>
+          <p>For banks, payment gateways, old ERP:</p>
+          <pre><code>Infrastructure/
+└── External/
+     ├── BankAdapter/
+     ├── PaymentGatewayAdapter/</code></pre>
+          <p><strong>Rule:</strong> External models NEVER leak into Domain.</p>
+
+          <h2>15. Deployment Strategy</h2>
+          <p><strong>Start with:</strong> Modular Monolith (Laravel modules).</p>
+          <p><strong>Then evolve to:</strong> Microservices.</p>
+          <p>Why? Faster iteration, lower operational overhead, easier debugging.</p>
+
+          <h2>Final Architecture Principles</h2>
+          <ul>
+            <li>Model the domain, not the database</li>
+            <li>Keep aggregates small and strict</li>
+            <li>Communicate via events, not calls</li>
+            <li>Isolate bounded contexts completely</li>
+            <li>Invest heavily in core domain (ledger + routing)</li>
+          </ul>
+
+          <p>
+            <a href="index.html">&larr; Back to Blog</a>
+          </p>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <ul class="footer-links">
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../index.html#skills">Skills</a></li>
+          <li><a href="../index.html#certifications">Certifications</a></li>
+          <li><a href="index.html">Blog</a></li>
+          <li><a href="mailto:Khaled_elwakeel@outlook.com">Contact</a></li>
+        </ul>
+        <p class="copyright">&copy; 2026 Khaled Alwakeel</p>
+      </div>
+    </footer>
+  </div>
+  <script src="../js/main.js"></script>
+</body>
+</html>

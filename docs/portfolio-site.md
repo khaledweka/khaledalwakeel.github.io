@@ -9,6 +9,7 @@ khaledalwakeel.github.io/
 ├── index.html          # Home: CV sections (About, Experience, Skills, Certifications)
 ├── blog/
 │   ├── index.html      # Blog listing
+│   ├── fintech-logistics-architecture.html
 │   ├── welcome-post.html
 │   └── restful-api-design.html
 ├── css/
@@ -16,7 +17,8 @@ khaledalwakeel.github.io/
 ├── js/
 │   └── main.js
 └── docs/
-    └── portfolio-site.md
+    ├── portfolio-site.md
+    └── fintech-logistics-architecture.md   # Reference architecture summary
 ```
 
 ## How to Add Blog Posts
